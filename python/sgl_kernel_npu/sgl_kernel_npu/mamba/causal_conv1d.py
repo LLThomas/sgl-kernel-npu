@@ -11,7 +11,7 @@ import torch
 import torch.nn.functional as F
 import triton
 import triton.language as tl
-import triton.language.extra.cann.extension as al
+al = tl  # triton-ascend compat: tl provides extract_slice, insert_slice, get_element
 
 PAD_SLOT_ID = -1
 

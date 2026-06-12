@@ -9,7 +9,7 @@ import torch
 import torch.nn.functional as F
 import triton
 import triton.language as tl
-import triton.language.extra.cann.extension as al
+al = tl  # triton-ascend compat: tl provides extract_slice, insert_slice, get_element
 from sgl_kernel_npu.fla.utils import (
     exp,
     prepare_chunk_indices,

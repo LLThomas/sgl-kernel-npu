@@ -8,7 +8,7 @@ package when you already have sin/cos tensors of shape [B, rope_dim].
 import torch
 import triton
 import triton.language as tl
-import triton.language.extra.cann.extension as al
+al = tl  # triton-ascend compat: tl provides extract_slice, insert_slice, get_element
 from sgl_kernel_npu.utils.triton_utils import get_device_properties
 
 
